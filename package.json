@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "orchid-orm": "^1.57.3",
+    "postgres": "^3.4.7"
+  }
+}
