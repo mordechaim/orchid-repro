@@ -1,11 +1,11 @@
 import { db } from './db/db';
 
-db.one.find(1).select('id', {
-  // hasOne relation: broken
-  two: (q) => q.two.select('id'),
-});
+// ts errors
+db.one.join('two').join('three').join('four').select('three.id', 'four.id');
 
-db.two.find(1).select('id', {
-  // belongs to relation: works
-  one: (q) => q.one.select('id'),
-});
+// this works
+db.one
+  .join('two')
+  .join(db.three, 'three.id', 'two.threeId')
+  .join(db.four, 'four.id', 'three.fourId')
+  .select('three.id', 'four.id');

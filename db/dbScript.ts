@@ -1,4 +1,4 @@
-import { rakeDb } from 'orchid-orm/migrations/postgres-js';
+import { rakeDb } from 'orchid-orm/migrations';
 import { BaseTable } from './baseTable';
 
 export const change = rakeDb(
