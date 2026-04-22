@@ -1,17 +1,13 @@
-import { orchidORM } from 'orchid-orm';
-import { FourTable } from './tables/four.table';
-import { OneTable } from './tables/one.table';
-import { ThreeTable } from './tables/three.table';
-import { TwoTable } from './tables/two.table';
+import { orchidORM } from 'orchid-orm/postgres-js';
+import { ATable } from './tables/a.table';
+import { BTable } from './tables/b.table';
+import { CTable } from './tables/c.table';
 
 export const db = orchidORM(
+  { databaseURL: '' },
   {
-    databaseURL: process.env.DATABASE_URL,
-  },
-  {
-    one: OneTable,
-    two: TwoTable,
-    three: ThreeTable,
-    four: FourTable,
+    a: ATable,
+    b: BTable,
+    c: CTable,
   },
 );

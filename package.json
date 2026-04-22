@@ -2,14 +2,14 @@
   "type": "module",
   "dependencies": {
     "dotenv-cli": "^11.0.0",
-    "orchid-orm": "^1.51.0",
-    "postgres": "^3.4.7"
+    "orchid-orm": "^1.66.0",
+    "postgres": "^3.4.9"
   },
   "scripts": {
     "run": "dotenv -c -- tsx index.ts",
     "db": "dotenv -c -- tsx db/dbScript.ts"
   },
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }
