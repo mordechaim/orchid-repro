@@ -1,16 +1,15 @@
-import { rakeDb } from 'orchid-orm/migrations';
+import { rakeDb } from 'orchid-orm/migrations/postgres-js';
 import { BaseTable } from './baseTable';
 
-export const change = rakeDb(
-  { databaseURL: process.env.DATABASE_URL },
+export const change = rakeDb.run(
+  { databaseURL: '' },
   {
     baseTable: BaseTable,
     snakeCase: true,
     migrationsTable: 'migrations',
     migrationsPath: './migrations',
-    recurrentPath: './scripts',
     migrationId: 'timestamp',
     dbPath: './db',
     import: (path) => import(path),
-  }
+  },
 );

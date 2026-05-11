@@ -1,13 +1,11 @@
 import { orchidORM } from 'orchid-orm/postgres-js';
-import { ATable } from './tables/a.table';
-import { BTable } from './tables/b.table';
-import { CTable } from './tables/c.table';
+import { AccountTable } from './tables/account.table';
+import { PosterTable } from './tables/poster.table';
 
 export const db = orchidORM(
   { databaseURL: '' },
   {
-    a: ATable,
-    b: BTable,
-    c: CTable,
+    account: AccountTable,
+    poster: PosterTable,
   },
 );
